@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Crawler – Tin Tức 24h</title><link rel="stylesheet" href="css/style.css"></head>
+<body><header id="header"></header>
+<main class="container crawler">
+  <h1 class="cat-title">Crawler tin tức</h1>
+  <label for="url">URL bài viết (dantri.com.vn)</label>
+  <div class="inline"><input id="url" type="url" placeholder="https://dantri.com.vn/bat-dong-san/ten-bai-viet-20260928122246655.htm"><button id="go">Crawl</button></div>
+  <p id="status"></p>
+  <details><summary>Không crawl được (CORS)? Dán mã HTML của bài viết</summary>
+    <p><small>Mở bài trên Dân trí → chuột phải → Xem nguồn trang → Ctrl+A, Ctrl+C → dán vào đây (vẫn nhập URL ở trên).</small></p>
+    <textarea id="html" rows="6"></textarea><button id="parse">Phân tích HTML</button></details>
+  <h3>Kết quả (JSON)</h3><pre id="result"></pre>
+  <h3>Bài đã crawl</h3><ul id="saved"></ul>
+  <button id="reset" class="danger">Reset dữ liệu</button>
+</main><footer id="footer"></footer>
+<script>window.onerror=function(m,s,l){var d=document.createElement('div');d.style='background:#fee;color:#900;padding:12px;font:14px sans-serif';d.textContent='Lỗi JavaScript: '+m+' ('+(s||'').split('/').pop()+':'+l+')';document.body.prepend(d)}</script><script src="js/data.js"></script><script src="js/storage.js"></script><script src="js/layout.js"></script><script src="js/crawler.js"></script><script src="js/crawler-page.js"></script></body></html>
